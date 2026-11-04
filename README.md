@@ -53,6 +53,8 @@ dsh plugin --profile desktop add "link:C:\path\to\dsh-speak-her"
 | `pitch` | 音调，如 `+10Hz`、`+0Hz` |
 | `maxChars` | 单次朗读最多多少字，防止一条回复念太久 |
 | `python` | 跑 edge-tts 的解释器，留空用 PATH 里的 `python` |
+| `watch` | 要朗读的会话 id 列表；空数组 = 全部会话 |
+| `paused` | 暂停朗读（不合成、不排队） |
 | `cleanMarkdown` | 朗读前过滤 Markdown/代码/链接符号（默认开；关掉会连 `**`、`#` 一起念出来） |
 
 ## 接口
@@ -64,6 +66,8 @@ dsh plugin --profile desktop add "link:C:\path\to\dsh-speak-her"
 | GET | `/dsh-speak-her/api/voices` | 列出中文音色 |
 | GET | `/dsh-speak-her/api/latest?since=N` | 取 N 之后新合成的语音（base64 data URI） |
 | POST | `/dsh-speak-her/api/test` | 试听一句话 |
+| GET | `/dsh-speak-her/api/sessions` | 列出会话（设置页勾选用） |
+| POST | `/dsh-speak-her/api/pause` | 暂停 / 恢复朗读 |
 | GET | `/dsh-speak-her/api/health` | 健康检查 |
 
 ## 已知限制
