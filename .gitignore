@@ -1,7 +1,22 @@
 node_modules/
 dist/
 *.log
+
+# 音频产物（不进仓库）
 *.mp3
 *.wav
+audio/
+
+# 本机配置 / 凭据（绝不能提交）
+speak-her.json
+config.local.json
+*.local.json
+*.secret.json
+.env
+.env.*
+credentials*
+*token*
+
+# 系统垃圾
 .DS_Store
 Thumbs.db

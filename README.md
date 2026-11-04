@@ -86,3 +86,10 @@ dsh plugin --profile desktop add "link:C:\path\to\dsh-speak-her"
 ## License
 
 MIT
+
+## 安全
+
+- API Key 只存在**本机** `~/.dsh/speak-her.json`，不进仓库
+- `.gitignore` 已排除 `speak-her.json`、`.env*`、`*.local.json`、`*token*` 等
+- 提交前自检：`npm run check:secrets`（扫 `brz_...` 和常见的 key 赋值）
+- 如果你 fork 后要加 CI，建议把这个脚本挂到 pre-commit 或 GitHub Actions
