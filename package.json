@@ -1,0 +1,36 @@
+{
+  "name": "dsh-speak-her",
+  "version": "0.1.0",
+  "description": "自动朗读：把她的每句话用 edge-tts 念出来，音色 / 语速 / 音调都能在设置页调。",
+  "license": "MIT",
+  "type": "module",
+  "keywords": ["dsh", "dsh-plugin", "tts", "read-aloud", "edge-tts"],
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "lib/host.js",
+  "exports": {
+    ".": "./lib/host.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": ["lib", "cordis.patch.yml", "README.md", "LICENSE"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0key1-W/dsh-speak-her.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0key1-W/dsh-speak-her/issues"
+  },
+  "homepage": "https://github.com/0key1-W/dsh-speak-her#readme",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": ["slots"],
+      "external": ["react"]
+    }
+  }
+}
