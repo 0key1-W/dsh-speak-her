@@ -40,7 +40,8 @@ dsh plugin --profile desktop add "link:C:\path\to\dsh-speak-her"
   "rate": "-8%",
   "pitch": "+10Hz",
   "maxChars": 500,
-  "python": ""
+  "python": "",
+  "cleanMarkdown": true
 }
 ```
 
@@ -52,6 +53,7 @@ dsh plugin --profile desktop add "link:C:\path\to\dsh-speak-her"
 | `pitch` | 音调，如 `+10Hz`、`+0Hz` |
 | `maxChars` | 单次朗读最多多少字，防止一条回复念太久 |
 | `python` | 跑 edge-tts 的解释器，留空用 PATH 里的 `python` |
+| `cleanMarkdown` | 朗读前过滤 Markdown/代码/链接符号（默认开；关掉会连 `**`、`#` 一起念出来） |
 
 ## 接口
 
