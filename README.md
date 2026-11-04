@@ -11,6 +11,7 @@
 - **自动朗读**：订阅会话事件，只认「说完一整轮」的助手文字；工具调用、思考过程不念
 - **音色可选**：设置页从 `edge-tts --list-voices` 里列出现有中文音色
 - **参数可调**：语速（`-8%`）、音调（`+10Hz`）、单句字数上限
+- **两种 TTS 提供方**：本地 `edge-tts`（免费）或 **BreezeBlue 云端音色**（要 API Key，可用大肥鱼等音色）
 - **右下角小窗**：不用进设置页，就能暂停、停止、勾选要朗读的会话
 - **试听 / 解锁自动播放**：浏览器通常要一次点击才允许出声，设置页有按钮
 - **去重**：同一段文字 60 秒内不会重复念
@@ -56,6 +57,10 @@ dsh plugin --profile desktop add "link:C:\path\to\dsh-speak-her"
 | `python` | 跑 edge-tts 的解释器，留空用 PATH 里的 `python` |
 | `watch` | 要朗读的会话 id 列表；空数组 = 全部会话 |
 | `paused` | 暂停朗读（不合成、不排队） |
+| `provider` | `edge`（默认）或 `breezeblue` |
+| `breeze.apiKey` | BreezeBlue API Key，形如 `brz_...`（[开发者控制台](https://breezeblue.ai/zh/app/developer/api-keys)创建） |
+| `breeze.voiceId` | 云端音色 id，例如 `voc_u3nxkd5578wc`（大肥鱼·机灵版） |
+| `breeze.baseUrl` | 默认 `https://api.breeze.blue` |
 | `cleanMarkdown` | 朗读前过滤 Markdown/代码/链接符号（默认开；关掉会连 `**`、`#` 一起念出来） |
 
 ## 接口
